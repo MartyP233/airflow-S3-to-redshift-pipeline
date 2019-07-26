@@ -1,2 +1,4 @@
 /env
 airflow.db
+*.pyc
+*.pid
