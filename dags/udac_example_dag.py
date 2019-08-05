@@ -62,6 +62,8 @@ stage_events_to_redshift = StageToRedshiftOperator(
     aws_credentials_id="aws_credentials",
     table='staging_events',
     json_format=LOG_JSONPATH,
+    provide_context=True,
+    s3_key="{execution_date.year}/{execution_date.month}",
 )
 
 stage_songs_to_redshift = StageToRedshiftOperator(
@@ -117,7 +119,9 @@ load_time_dimension_table = LoadDimensionOperator(
 
 run_quality_checks = DataQualityOperator(
     task_id='Run_data_quality_checks',
-    dag=dag
+    dag=dag,
+    sql_test='',
+    expected_result=
 )
 
 end_operator = DummyOperator(task_id='Stop_execution',  dag=dag)
