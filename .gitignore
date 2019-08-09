@@ -4,3 +4,4 @@ airflow.db
 *.pyc
 *.pid
 dwh.cfg
+.vscode
