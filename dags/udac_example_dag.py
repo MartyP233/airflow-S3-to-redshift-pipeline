@@ -120,8 +120,8 @@ load_time_dimension_table = LoadDimensionOperator(
 run_quality_checks = DataQualityOperator(
     task_id='Run_data_quality_checks',
     dag=dag,
-    sql_test='',
-    expected_result=
+    sql_test='COUNT(*) FROM songplays WHERE songplayid playid IS NULL',
+    expected_result=''
 )
 
 end_operator = DummyOperator(task_id='Stop_execution',  dag=dag)
