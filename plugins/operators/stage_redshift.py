@@ -21,7 +21,7 @@ class StageToRedshiftOperator(BaseOperator):
                  aws_credentials_id="",
                  table="",
                  s3_bucket="",
-                 s3_key="",                 
+                 s3_key="",
                  iam_role="",
                  json_format="",
                  *args, **kwargs):
